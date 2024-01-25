@@ -1,78 +1,78 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Background color for the entire page */
+    background-color: rgb(208, 194, 194);
+    /* Changed to black */
+}
+
+.logo {
+    float: left;
+    padding: 10px;
+    width: 5%;
+    height: 7%;
+    margin-left: 50px;
 }
 
 .navbar {
-    background-color: #3498db;
-    overflow: hidden;
+    background-color: #333;
+    color: #333;
+    padding: 15px;
+
 }
 
 .navbar ul {
+    display: inline-flex;
     list-style: none;
-    margin: 0;
     padding: 0;
+    float: right;
+
+    /* Added to move navbar items to the right */
 }
 
-.navbar li {
-    float: left;
+.navbar ul li {
+    display: inline-flex;
+    margin-right: 20px;
+
 }
 
-.navbar a {
-    display: block;
+.navbar ul li a {
     color: #fff;
-    text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
-    cursor: pointer;
 }
 
-.navbar a:hover {
-    background-color: #2980b9;
+.navbar::after {
+    content: "";
+    display: table;
+    clear: both;
+    /* Clear float */
 }
 
 .main-content {
-    text-align: center;
-    margin: 20px;
+    margin: 15px;
 }
 
-h1 {
+.main-content h1 {
     color: #333;
 }
 
-p {
-    color: #555;
+.main-content p {
+    color: #666;
 }
 
 .butt {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #3498db;
+    background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 .butt:hover {
-    background-color: #2980b9;
-}
-
-
-
-.graph {
-    margin-top: 30px;
-    background-color: #ddd;
-    width: 70%;
-    margin-right: 100px;
-    height: 65vh;
-    border-radius: 5px;
-}
-
-.inp_graph {
-    display: flex;
+    background-color: #444;
 }
