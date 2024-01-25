@@ -45,6 +45,13 @@ function updateChart() {
 
     const coefficients = linearApproximation(xValues, yValues);
 
+
+    // Create the function string
+    const functionString = `y = ${coefficients[1].toFixed(2)}x + ${coefficients[0].toFixed(2)}`;
+
+    // Display the function string on the page
+    document.getElementById('linearFunction').textContent = functionString;
+
     // Generate points for the linear approximation line
     const xValuesApprox = Array.from({ length: 2 }, (_, i) => i === 0 ? Math.min(...xValues) : Math.max(...xValues));
     const yValuesApprox = xValuesApprox.map(x => coefficients[0] + coefficients[1] * x);
