@@ -9,24 +9,29 @@
 </head>
 <body>
     <nav class="navbar">
+        
         <li><a><img class="logo" src="./logo.png" alt=""><a/></li>
+        <a class="text">Graph Plotter</a>
+        
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="./cubic.html" id="Cubic_Spline">Cubic Spline</li>
-            <li><a href="./polynomial.html" id="Polynomial">Polynomial</li>
-            <li><a href="./linear.html" id="Linear">Linear</li>
-            <li><a href="aboutus.html">About Us</a></li>
+            <li><a class="nav-el" href="home.html">Home</a></li>
+            <li><a class="nav-el" href="./cubic.html" id="Cubic_Spline">Cubic Spline</li>
+            <li><a class="nav-el" href="./polynomial.html" id="Polynomial">Polynomial</li>
+            <li><a class="nav-el" href="./linear.html" id="Linear">Linear</li>
+            <li><a class="nav-el" href="aboutus.html">About Us</a></li>
         </ul>
     </nav>
 
     <div class="main-content">
         <h1>Welcome to our Graph Plotter!</h1>
         <p>Explore the power of graph plotting with our advanced algorithms: Cubic Spline, Polynomial, and Linear.</p>
-        <button class="butt" id="Cubic_Spline_btn">Cubic Spline</button>
-        <button class="butt" id="Polynomial_btn">Polynomial</button>
-        <button class="butt" id="Linear_btn">Linear</button>
+        
     </div>
-
+    <div class="func">
+        <a href="./cubic.html"><button class="butt" id="Cubic_Spline_btn">Cubic Spline</button></a>
+        <a href="./polynomial.html"><button class="butt" id="Polynomial_btn">Polynomial</button></a>
+        <a href="./linear.html"><button class="butt" id="Linear_btn">Linear</button></a>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
