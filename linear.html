@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="style.css" />
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    </head>
-    <body>
-        <nav class="navbar">
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="./cubic.html" id="Cubic_Spline">Cubic Spline</li>
-                <li><a href="./polynomial.html" id="Polynomial">Polynomial</li>
-                <li><a href="./linear.html" id="Linear">Linear</li>
-                <li><a href="aboutus.html">About Us</a></li>
-            </ul>
-        </nav>
-        <div class="inp_graph">
-            <div class="input">
-                <input type="text" id="x" placeholder="Enter x value" />
-                <input type="text" id="y" placeholder="Enter y value" />
-            </div>
-            <div class="graph">
-                <canvas id="myChart"></canvas>
-            </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linear Approximation</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="./cubic.html" id="Cubic_Spline">Cubic Spline</a></li>
+            <li><a href="./polynomial.html" id="Polynomial">Polynomial</a></li>
+            <li><a href="./linear.html" id="Linear">Linear</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+        </ul>
+    </nav>
+    <div class="inp_graph">
+        <div class="input">
+            <input type="text" id="x" placeholder="Enter x value" />
+            <input type="text" id="y" placeholder="Enter y value" />
+            <button onclick="addData()">Add Data</button>
         </div>
+        <div class="graph">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
 
-        <script src="script.js"></script>
-    </body>
+    <script src="linear.js"></script>
+</body>
 </html>
