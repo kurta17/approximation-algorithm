@@ -1,31 +1,26 @@
-// JavaScript file (script.js)
-
+// Get input fields
 let xInput = document.getElementById('x');
 let yInput = document.getElementById('y');
+
+// Get calculate button
 let calculateButton = document.getElementById('calculate');
 
-let points = [];
+let chart;
 
+// Add event listener to calculate button
 calculateButton.addEventListener('click', function() {
-    try {
-        let xValues = xInput.value.split(',').map(Number);
-        let yValues = yInput.value.split(',').map(Number);
+    // Get x and y values
+    let xValues = xInput.value.split(',').map(Number);
+    let yValues = yInput.value.split(',').map(Number);
 
-        if (xValues.length !== yValues.length) {
-            throw new Error('Number of x values must match number of y values');
-        }
+    // Create points array
+    let points = xValues.map((x, i) => [x, yValues[i]]);
 
-        points = xValues.map((x, i) => [x, yValues[i]]);
-        updateChart();
-    } catch (error) {
-        console.error('Error:', error.message);
-    }
+    // Call updateChart function with points
+    updateChart(points);
 });
 
-xInput.addEventListener('change', updateChart);
-yInput.addEventListener('change', updateChart);
-
-function lagrangeInterpolation(x, y) {
+function lagrangeInterpolation(x, points) {
     let result = 0;
     let n = points.length;
 
@@ -42,22 +37,22 @@ function lagrangeInterpolation(x, y) {
     return result;
 }
 
-function clearChart() {
-    let chartCanvas = document.getElementById('myChart');
-    chartCanvas.getContext('2d').clearRect(0, 0, chartCanvas.width, chartCanvas.height);
-}
-
-function updateChart() {
+function updateChart(points) {
     let ctx = document.getElementById('myChart').getContext('2d');
+
+    // If a chart already exists, destroy it
+    if (chart) {
+        chart.destroy();
+    }
 
     let xValues = [];
     for (let i = Math.min(...points.map(point => point[0])); i <= Math.max(...points.map(point => point[0])); i += 1) {
         xValues.push(i);
     }
 
-    let yValues = xValues.map((x) => lagrangeInterpolation(x));
+    let yValues = xValues.map((x) => lagrangeInterpolation(x, points));
 
-    let chart = new Chart(ctx, {
+    chart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: xValues,
@@ -86,27 +81,23 @@ function updateChart() {
                 text: 'Lagrange Polynomial Interpolation',
             },
             scales: {
-                xAxes: [
-                    {
+                x: {
+                    display: true,
+                    title: {
                         display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'x',
-                        },
-                    },
-                ],
-                yAxes: [
-                    {
+                        text: 'x',
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
                         display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'y',
-                        },
-                    },
-                ],
+                        text: 'y',
+                    }
+                }
             },
         },
     });
 }
-
-updateChart();
+// Don't call updateChart here, call it inside the event listener for the calculate button
+// updateChart();
