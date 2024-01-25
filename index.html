@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <h1 class="Dashboard">Dashboard</h1>
+        <h3 class="h3">Choose algorithm</h3>
+        <div class="three">
+            <div class="butt" id="Cubic_Spline">cubic Spline</div>
+            <div class="butt" id="Polynomial">Polynomial</div>
+            <div class="butt" id="Linear">Linear</div>
+        </div>
+        <div class="inp_graph">
+            <div class="input">
+                <input type="text" id="x" placeholder="Enter x value" />
+                <input type="text" id="y" placeholder="Enter y value" />
+            </div>
+            <div class="graph">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
