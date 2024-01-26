@@ -153,3 +153,34 @@ a .text {
 .graph {
     width: 80%;
 }
+
+/* About Us */
+
+p {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+li {
+    margin: 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 600px;
+    object-fit: cover;
+}
