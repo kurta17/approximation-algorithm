@@ -160,18 +160,18 @@ p {
     text-align: center;
 }
 
-ul {
+.names {
     list-style: none;
     display: flex;
     justify-content: space-around;
     padding: 0;
 }
 
-li {
+.names li {
     margin: 10px;
 }
 
-li a {
+.names li a {
     text-decoration: none;
     color: #333;
 }
